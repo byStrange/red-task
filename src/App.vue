@@ -2,10 +2,20 @@
   <div :class="{ desktop: isDesktop, mobile: isMobile, app: true }">
     <Row width="100%">
       <Col width="40%">
-        <div class="tasks card"></div>
+        <div class="panel card">
+          <Button text="Starred" icon="fa-star" />
+          <Button text="Lists" icon="fa-layer" />
+          <Button text="Done" icon="fa-check" />
+
+        </div>
       </Col>
       <Col width="60%">
-        <div class="preview card"></div>
+        <div class="preview card">
+          <div class="title">
+            <span>Daily Tasks</span>
+          </div>
+          <TaskItem title="task title bla bla bla bla bla bla bla  "/>
+        </div>
       </Col>
     </Row>
   </div>
@@ -14,17 +24,25 @@
 <script>
 import Row from "@/components/containers/Row.vue";
 import Col from "@/components/containers/Col.vue";
+import Button from "@/components/blocks/ActionButton.vue";
+import TaskItem from "@/components/blocks/TaskItem.vue";
+import { TaskList, Task } from "./models.js";
 export default {
   components: {
     Row,
     Col,
+    Button,
+    TaskItem,
   },
   name: "App",
   data() {
     return {
       isDesktop: undefined,
       isMobile: undefined,
-      db: null,
+      taskList: [],
+      db: localStorage.getItem("tasks")
+        ? JSON.parse(localStorage.getItem("tasks"))
+        : [],
     };
   },
   mounted() {
@@ -32,8 +50,6 @@ export default {
     this.isMobile = navigator.userAgent.match(
       /Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile/
     );
-    let db = openDatabase("red-task", "1.0", "tasks", 2 * 1024 * 1024);
-    this.db = db;
   },
   methods: {
     onResize() {

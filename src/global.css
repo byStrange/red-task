@@ -1,3 +1,6 @@
+/* Poppins font */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
 :root {
   --red: #fd5d5d;
   --red-hovered: #ff8080;
@@ -12,6 +15,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Poppins, sans-serif;
+  transition: 300ms;
 }
 
 #app {
@@ -55,4 +60,15 @@
   margin: 0 auto;
   width: 100%;
   height: 100%;
+  padding: 14px;
 }
+
+.card.panel > *:not(:last-child){
+  margin-bottom: 14px;
+}
+
+.preview.card .title {
+  font-size: 24q;
+  margin-bottom: 14px;
+}
+
