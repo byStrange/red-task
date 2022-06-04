@@ -1,5 +1,5 @@
 /* Poppins font */
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 
 :root {
   --red: #fd5d5d;
@@ -63,12 +63,28 @@
   padding: 14px;
 }
 
-.card.panel > *:not(:last-child){
+.card.panel > *:not(:last-child) {
   margin-bottom: 14px;
 }
 
 .preview.card .title {
-  font-size: 24q;
+  font-size: 24Q;
   margin-bottom: 14px;
 }
 
+input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+}

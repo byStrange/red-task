@@ -6,7 +6,6 @@
           <Button text="Starred" icon="fa-star" />
           <Button text="Lists" icon="fa-layer" />
           <Button text="Done" icon="fa-check" />
-
         </div>
       </Col>
       <Col width="60%">
@@ -14,7 +13,8 @@
           <div class="title">
             <span>Daily Tasks</span>
           </div>
-          <TaskItem title="task title bla bla bla bla bla bla bla  "/>
+          <TaskItem title="task title bla bla bla bla bla bla bla  " />
+          <TaskItem title="task title bla bla bla bla bla bla bla  " />
         </div>
       </Col>
     </Row>
